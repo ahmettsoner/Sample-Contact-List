@@ -7,7 +7,7 @@ namespace Contact.Service.Data.Models
     {
         public Guid ID { get; set; }
         public string Name { get; set; }
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         public virtual ICollection<Contact> Contacts {get;set;}
     }

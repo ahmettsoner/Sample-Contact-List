@@ -4,8 +4,18 @@ namespace Contact.Service.Data
 {
     public class ContactServiceDbContext : DbContext
     {
-        DbSet<Models.Person> Persons{set;get;}
-        DbSet<Models.Contact> Contacts{set;get;}
+        public DbSet<Models.Person> Persons{set;get;}
+        public DbSet<Models.Contact> Contacts{set;get;}
+
+        private ContactServiceDbContext()
+        {
+            
+        }
+        public ContactServiceDbContext(DbContextOptions options) : base(options)
+        {
+            
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
