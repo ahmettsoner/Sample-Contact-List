@@ -19,10 +19,15 @@ namespace Contact.Service.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            modelBuilder.Entity<Models.Person>().Property(x => x.ID).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<Models.Person>()
                 .HasMany<Models.Contact>()
                 .WithOne()
                 .HasForeignKey(o=>o.ID);
+
+            modelBuilder.Entity<Models.Contact>().Property(x => x.ID).ValueGeneratedOnAdd();
         }
     }
 }
