@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Contact.Service.API\Contact.Service.API.csproj" />
+    <ProjectReference Include="..\Contact.Service.Data\Contact.Service.Data.csproj" />
+    <ProjectReference Include="..\Contact.Service.DomainModels\Contact.Service.DomainModels.csproj" />
+  </ItemGroup>
+
 </Project>
