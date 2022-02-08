@@ -5,6 +5,7 @@ import { ListComponent as ContactList } from './Modules/contact/list/list.compon
 import { AboutComponent } from './Common/Pages/about/about.component';
 
 const routes: Routes = [
+  {path: "", component:PersonList},
   {path: "persons", component:PersonList},
   {path: "contacts", component:ContactList},
   {path: "about", component:AboutComponent},

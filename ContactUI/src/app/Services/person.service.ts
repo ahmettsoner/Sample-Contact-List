@@ -9,13 +9,9 @@ const httpOptions={
   })
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-
-
+@Injectable({providedIn: 'root'})
 export class PersonService {
-  serviceUrl:string = 'https://localhost:5001/api/person';
+  serviceUrl:string = 'https://localhost:44395/api/Person';
 
   constructor(private http:HttpClient) { }
 
@@ -31,19 +27,19 @@ export class PersonService {
     return this.http.get<Person[]>(url, httpOptions);
   }
 
-  addPersons(person:Person):Observable<Person>{
+  addPerson(person:Person):Observable<Person>{
     const url = `${this.serviceUrl}`;
 
     return this.http.post<Person>(url, person, httpOptions);
   }
 
-  updatePersons(person:Person):Observable<Person>{
+  updatePerson(person:Person):Observable<Person>{
     const url = `${this.serviceUrl}/{person.code}`;
 
     return this.http.put<Person>(url, person, httpOptions);
   }
 
-  deletePersons(person:Person){
+  deletePerson(person:Person){
     const url = `${this.serviceUrl}/{person.code}`;
 
     this.http.delete(url, httpOptions);

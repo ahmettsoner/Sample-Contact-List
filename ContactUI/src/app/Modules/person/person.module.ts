@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { DetailComponent } from './detail/detail.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 
 
@@ -12,7 +13,8 @@ import { DetailComponent } from './detail/detail.component';
     ListComponent,
     CreateComponent,
     UpdateComponent,
-    DetailComponent
+    DetailComponent,
+    ListItemComponent
   ],
   imports: [
     CommonModule
