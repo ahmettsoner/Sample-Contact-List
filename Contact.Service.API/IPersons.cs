@@ -24,10 +24,6 @@ namespace Contact.Service.API
         
         Task<IEnumerable<DomainModels.Person>> ListPersonsAsync();
         
-        public IEnumerable<DomainModels.Person> ListPersonPersons(Guid personCode);
-        
-        Task<IEnumerable<DomainModels.Person>> ListPersonPersonsAsync(Guid personCode);
-        
         Task<DomainModels.Person> GetPersonAsync(Guid Code);
     }
 }
