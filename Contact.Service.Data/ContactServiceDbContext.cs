@@ -9,11 +9,11 @@ namespace Contact.Service.Data
 
         private ContactServiceDbContext()
         {
-            
+            this.Database.EnsureCreated();
         }
         public ContactServiceDbContext(DbContextOptions options) : base(options)
         {
-            
+            this.Database.EnsureCreated();
         }
 
 
