@@ -25,7 +25,7 @@ export class PersonService {
     return this.http.get<Person[]>(url, httpOptions);
   }
 
-  getPersons(code:string):Observable<Person[]>{
+  getPerson(code:string):Observable<Person[]>{
     const url = `${this.serviceUrl}/{code}`;
 
     return this.http.get<Person[]>(url, httpOptions);
