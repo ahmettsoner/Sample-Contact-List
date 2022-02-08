@@ -11,7 +11,8 @@ namespace  Contact.Service.API
 
             CreateMap<Data.Models.Contact, DomainModels.Contact>()
                 .ForMember(o=>o.Code, p=>p.MapFrom(x=>x.ID))
-                .ForMember(o=>o.Type, p=>p.MapFrom(x=>x.ID))
+                // .ForMember(o=>o.Type, p=>p.MapFrom(x=>x.Type))
+                .ForMember(o=>o.PersonCode, p=>p.MapFrom(x=>x.Person.ID))
                 .ReverseMap();
         }
     }

@@ -25,6 +25,7 @@ namespace Contact.Service.API
         public async Task AddNewPersonAsync(DomainModels.Person Person){
             var PersonDAO = mapper.Map<Data.Models.Person>(Person);
             await repository.AddNewAsync(PersonDAO);
+            mapper.Map(PersonDAO, Person);
         }
         
         public void UpdatePerson(Guid Code, DomainModels.Person Person){
@@ -32,6 +33,7 @@ namespace Contact.Service.API
             if(PersonDAO != null){
                 mapper.Map(Person, PersonDAO);
                 repository.Update(PersonDAO);
+                mapper.Map(PersonDAO, Person);
             }
         }
         

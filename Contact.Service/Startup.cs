@@ -31,6 +31,16 @@ namespace Contact.Service
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(o =>
+            {
+                o.AddPolicy("defaultCORSPolicy", p =>
+                {
+                    p.AllowAnyMethod();
+                    p.AllowAnyHeader();
+                    p.AllowAnyOrigin();
+                });
+            });
+
             services.AddControllers(o => {
                 o.SuppressAsyncSuffixInActionNames = false;
             });
@@ -58,6 +68,7 @@ namespace Contact.Service
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contact.Service v1"));
             }
 
+            app.UseCors("defaultCORSPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();

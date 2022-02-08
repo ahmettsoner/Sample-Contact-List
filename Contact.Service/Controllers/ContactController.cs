@@ -24,8 +24,9 @@ namespace Contact.Service.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{personCode}")]
+        [HttpGet("person/{personCode}")]
         public async Task<ActionResult<IEnumerable<DomainModels.Contact>>> ListPersonContactsAsync(Guid personCode){
+            
             var result = await this.contactAPI.ListPersonContactsAsync(personCode);
 
             return Ok(result);
