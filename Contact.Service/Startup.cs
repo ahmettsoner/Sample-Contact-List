@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Contact.Service.API;
 using Contact.Service.Data;
 using Contact.Service.Data.Repositories;
@@ -30,7 +31,10 @@ namespace Contact.Service
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers(o => {
+                o.SuppressAsyncSuffixInActionNames = false;
+            });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<ContactServiceDbContext>(o=>{
                 o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
@@ -59,7 +63,6 @@ namespace Contact.Service
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
