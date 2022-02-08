@@ -7,7 +7,7 @@ using Contact.Service.Data.Repositories;
 
 namespace Contact.Service.API
 {
-    public class Persons
+    public class Persons : IPersons
     {
         private readonly IMapper mapper;
         private readonly IPersonRepository repository;
